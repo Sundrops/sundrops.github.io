@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guanghui Ren | 任广辉</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --bg: #0a0e17;
+    --bg-card: #111827;
+    --bg-hover: #1a2332;
+    --border: #1e293b;
+    --text: #e2e8f0;
+    --text-dim: #64748b;
+    --text-bright: #f8fafc;
+    --accent: #22d3ee;
+    --accent2: #a78bfa;
+    --accent3: #34d399;
+    --accent4: #fb923c;
+    --green: #4ade80;
+    --red: #f87171;
+    --yellow: #fbbf24;
+    --pink: #f472b6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--accent);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .grid-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image:
+      linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none; z-index: 0;
+  }
+
+  .scanline {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+    pointer-events: none; z-index: 1000;
+  }
+
+  .container {
+    max-width: 900px; margin: 0 auto; padding: 40px 20px;
+    position: relative; z-index: 1;
+  }
+
+  /* Loading */
+  .loading-screen {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; min-height: 60vh;
+    font-family: 'JetBrains Mono', monospace; color: var(--accent);
+  }
+  .loading-screen .spinner {
+    width: 40px; height: 40px; border: 2px solid var(--border);
+    border-top-color: var(--accent); border-radius: 50%;
+    animation: spin 1s linear infinite; margin-bottom: 16px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* HEADER */
+  .header {
+    border: 1px solid var(--border); background: var(--bg-card);
+    border-radius: 8px; overflow: hidden; margin-bottom: 24px;
+  }
+  .terminal-bar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px; background: #0d1117;
+    border-bottom: 1px solid var(--border);
+  }
+  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-red { background: var(--red); }
+  .dot-yellow { background: var(--yellow); }
+  .dot-green { background: var(--green); }
+  .terminal-title {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--text-dim); margin-left: 8px;
+  }
+
+  .profile-section {
+    display: flex; gap: 32px; padding: 32px; align-items: flex-start;
+  }
+  .avatar-container { flex-shrink: 0; position: relative; }
+  .avatar {
+    width: 140px; height: 140px; border-radius: 8px;
+    border: 2px solid var(--border); object-fit: cover;
+    filter: grayscale(30%); transition: filter 0.3s, border-color 0.3s;
+  }
+  .avatar:hover { filter: grayscale(0%); border-color: var(--accent); }
+  .avatar-frame {
+    position: absolute; top: -4px; left: -4px; right: -4px; bottom: -4px;
+    border: 1px solid var(--accent); border-radius: 10px; opacity: 0.3;
+  }
+
+  .profile-info { flex: 1; }
+  .prompt-line {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: var(--text-dim); margin-bottom: 4px;
+  }
+  .prompt-line .user { color: var(--accent); }
+  .prompt-line .at { color: var(--text-dim); }
+  .prompt-line .host { color: var(--accent2); }
+  .prompt-line .path { color: var(--accent3); }
+  .prompt-line .symbol { color: var(--text-dim); }
+
+  .name {
+    font-family: 'Space Grotesk', sans-serif; font-size: 32px;
+    font-weight: 700; color: var(--text-bright); margin: 8px 0 4px;
+    letter-spacing: -0.5px;
+  }
+  .name-cn { font-size: 18px; color: var(--text-dim); margin-bottom: 12px; }
+
+  .bio-line {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: var(--text); margin-bottom: 3px;
+  }
+  .bio-line .key { color: var(--accent); }
+  .bio-line .val { color: var(--accent3); }
+  .bio-line .str { color: var(--yellow); }
+
+  .links {
+    display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;
+  }
+  .link-btn {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    padding: 6px 14px; border: 1px solid var(--border);
+    border-radius: 4px; color: var(--text); text-decoration: none;
+    background: transparent; transition: all 0.2s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .link-btn:hover {
+    border-color: var(--accent); color: var(--accent);
+    background: rgba(34, 211, 238, 0.05);
+  }
+
+  /* SECTION */
+  .section-header {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 16px; font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  .section-header .hash { color: var(--text-dim); }
+  .section-header .title { color: var(--text-bright); font-weight: 600; }
+
+  /* SECTION */
+  .section {
+    border: 1px solid var(--border); background: var(--bg-card);
+    border-radius: 8px; padding: 24px; margin-bottom: 24px;
+  }
+
+  /* PUBLICATIONS */
+  .pub-list { list-style: none; }
+  .pub-item {
+    padding: 16px 0; border-bottom: 1px solid var(--border); transition: background 0.2s;
+  }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-item:hover {
+    background: var(--bg-hover); margin: 0 -12px;
+    padding-left: 12px; padding-right: 12px; border-radius: 4px;
+  }
+  .pub-venue {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--accent); margin-bottom: 4px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .pub-badge {
+    font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 500;
+  }
+  .badge-award { background: rgba(251, 191, 36, 0.15); color: var(--yellow); border: 1px solid rgba(251, 191, 36, 0.3); }
+  .badge-top { background: rgba(34, 211, 238, 0.15); color: var(--accent); border: 1px solid rgba(34, 211, 238, 0.3); }
+  .pub-title {
+    font-size: 15px; font-weight: 500; color: var(--text-bright);
+    margin-bottom: 4px; line-height: 1.4;
+  }
+  .pub-title a { color: inherit; text-decoration: none; }
+  .pub-title a:hover { color: var(--accent); }
+  .pub-authors {
+    font-size: 12px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;
+  }
+  .pub-authors .me { color: var(--accent); font-weight: 500; }
+  .pub-authors .corresponding { color: var(--accent); font-weight: 700; margin-left: 1px; cursor: help; }
+  .pub-legend { font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; margin: 4px 0 10px; }
+  .pub-filters {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+    margin: 0 0 16px; font-family: 'JetBrains Mono', monospace;
+  }
+  .filter-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .filter-label { font-size: 11px; color: var(--text-dim); }
+  .filter-btn {
+    font-family: inherit; font-size: 11px; color: var(--text-dim);
+    background: transparent; border: 1px solid var(--border);
+    padding: 3px 10px; border-radius: 4px; cursor: pointer;
+    transition: all .15s ease;
+  }
+  .filter-btn:hover { color: var(--text); border-color: var(--accent); }
+  .filter-btn.active { color: var(--bg); background: var(--accent); border-color: var(--accent); font-weight: 600; }
+  .filter-select {
+    font-family: inherit; font-size: 11px; color: var(--text);
+    background: var(--bg-card); border: 1px solid var(--border);
+    padding: 3px 8px; border-radius: 4px; cursor: pointer;
+  }
+  .filter-select:focus { outline: none; border-color: var(--accent); }
+  .filter-count { font-size: 11px; color: var(--text-dim); margin-left: auto; }
+  .pub-field {
+    font-size: 10px; color: var(--accent2); border: 1px solid var(--accent2);
+    border-radius: 3px; padding: 0 6px; margin-left: 8px; opacity: .8;
+  }
+  .pub-meta {
+    display: flex; gap: 16px; margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  }
+  .pub-meta .citations { color: var(--accent3); }
+  .pub-meta .year { color: var(--text-dim); }
+
+  /* STATUS */
+  .status-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-dim); padding: 12px 0; border-top: 1px solid var(--border);
+  }
+  .sync-status { display: flex; align-items: center; gap: 6px; }
+  .sync-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .sync-dot.ok { background: var(--green); }
+  .sync-dot.err { background: var(--red); }
+
+  /* FOOTER */
+  .footer {
+    text-align: center; padding: 32px 0;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-dim);
+  }
+  .footer .ascii { color: var(--accent); opacity: 0.3; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .profile-section { flex-direction: column; align-items: center; text-align: center; }
+    .links { justify-content: center; }
+    .name { font-size: 24px; }
+    .bio-line { text-align: left; }
+  }
+
+  .fade-in {
+    opacity: 0; transform: translateY(10px);
+    animation: fadeIn 0.5s ease forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+  .glow-text { text-shadow: 0 0 20px rgba(34, 211, 238, 0.3); }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="scanline"></div>
+
+<div class="container" id="app">
+  <div class="loading-screen" id="loader">
+    <div class="spinner"></div>
+    <div>$ loading scholar profile...</div>
+  </div>
+</div>
+
+<script>
+const VENUE_KEYWORDS = {
+  'cvpr': { short: 'CVPR', top: true },
+  'iccv': { short: 'ICCV', top: true },
+  'eccv': { short: 'ECCV', top: true },
+  'neurips': { short: 'NeurIPS', top: true },
+  'nips': { short: 'NeurIPS', top: true },
+  'icml': { short: 'ICML', top: true },
+  'iclr': { short: 'ICLR', top: true },
+  'aaai': { short: 'AAAI', top: true },
+  'ijcai': { short: 'IJCAI', top: true },
+  'iros': { short: 'IROS' },
+  'icra': { short: 'ICRA' },
+  'rss': { short: 'RSS' },
+  'tpami': { short: 'TPAMI', top: true },
+  'tnnls': { short: 'TNNLS' },
+  't-ro': { short: 'T-RO' },
+  'tro': { short: 'T-RO' },
+  'bmvc': { short: 'BMVC' },
+  'acm mm': { short: 'ACM MM' },
+};
+
+const AWARD_KEYWORDS = ['best paper', 'best student', 'outstanding', 'honorable', 'best model'];
+
+function highlightVenue(venue) {
+  const v = venue.toLowerCase();
+  for (const [key, info] of Object.entries(VENUE_KEYWORDS)) {
+    if (v.includes(key)) return info;
+  }
+  return null;
+}
+
+function hasAward(venue) {
+  const v = venue.toLowerCase();
+  return AWARD_KEYWORDS.some(k => v.includes(k));
+}
+
+function highlightAuthors(authors) {
+  // Strip a trailing "..." (Scholar truncation) to find the real last token.
+  const core = authors.replace(/[,\s]*\.\.\.\s*$/, '');
+  // Corresponding author = "Ren" appearing at the end of the (untruncated) list,
+  // matching both the abbreviated "G Ren" and the full "Guanghui Ren".
+  const isCorresponding = /\b(?:Guanghui|G\.?)\s*Ren\s*$/.test(core);
+
+  let html = authors.replace(
+    /\b(?:Guanghui|G\.?)\s*Ren\b/g,
+    m => `<span class="me">${m}</span>`
+  );
+
+  if (isCorresponding) {
+    // Add the corresponding-author marker to the final Ren occurrence.
+    html = html.replace(
+      /(<span class="me">[^<]*Ren<\/span>)(?![\s\S]*<span class="me">)/,
+      '$1<sup class="corresponding" title="Corresponding author">&#8225;</sup>'
+    );
+  }
+  return html;
+}
+
+function buildPubItem(paper) {
+  const venue = highlightVenue(paper.venue);
+  let badge = '';
+  if (hasAward(paper.venue)) badge = '<span class="pub-badge badge-award">Award</span>';
+  else if (venue && venue.top) badge = '<span class="pub-badge badge-top">Top Venue</span>';
+
+  const venueLabel = venue ? venue.short : paper.venue;
+  const titleHtml = paper.url
+    ? `<a href="${paper.url}" target="_blank">${paper.title}</a>`
+    : paper.title;
+
+  return `
+    <li class="pub-item" data-year="${paper.year || ''}" data-field="${paper.field || ''}">
+      <div class="pub-venue">
+        <span>${venueLabel}</span>${badge}${paper.field ? `<span class="pub-field">${paper.field}</span>` : ''}
+      </div>
+      <div class="pub-title">${titleHtml}</div>
+      <div class="pub-authors">${highlightAuthors(paper.authors)}</div>
+      <div class="pub-meta">
+        <span class="citations">&uarr; ${paper.citations} citations</span>
+        <span class="year">${paper.year || ''}</span>
+      </div>
+    </li>`;
+}
+
+function render(data) {
+  const pubs = data.papers || [];
+
+  const updatedDate = data.updated_at
+    ? new Date(data.updated_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+    : 'unknown';
+
+  const app = document.getElementById('app');
+  app.innerHTML = `
+    <!-- HEADER -->
+    <div class="header fade-in">
+      <div class="terminal-bar">
+        <div class="terminal-dot dot-red"></div>
+        <div class="terminal-dot dot-yellow"></div>
+        <div class="terminal-dot dot-green"></div>
+        <span class="terminal-title">~/.profile/guanghui.ren — bash</span>
+      </div>
+      <div class="profile-section">
+        <div class="avatar-container">
+          <img class="avatar" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=oqN1dA8AAAAJ&citpid=11" alt="Guanghui Ren">
+          <div class="avatar-frame"></div>
+        </div>
+        <div class="profile-info">
+          <div class="prompt-line">
+            <span class="user">guest</span><span class="at">@</span><span class="host">homepage</span><span class="path"> ~/</span><span class="symbol"> $</span>
+          </div>
+          <h1 class="name glow-text">Guanghui Ren</h1>
+          <p class="name-cn">任广辉</p>
+          <div class="bio-line"><span class="key">role</span>=<span class="str">"Researcher &amp; Engineer"</span></div>
+          <div class="bio-line"><span class="key">affiliation</span>=<span class="str">"AgiBot"</span></div>
+          <div class="bio-line"><span class="key">interests</span>=[<span class="val">"Robotics"</span>, <span class="val">"Embodied AI"</span>, <span class="val">"Manipulation"</span>]</div>
+          <div class="bio-line"><span class="key">email</span>=<span class="str">"renguanghui@agibot.com"</span></div>
+          <div class="links">
+            <a href="https://scholar.google.com/citations?user=oqN1dA8AAAAJ" class="link-btn" target="_blank"><span class="icon">📊</span> Scholar</a>
+            <a href="https://github.com/sundrops" class="link-btn" target="_blank"><span class="icon">🐙</span> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section fade-in">
+      <div class="section-header">
+        <span class="hash">#</span>
+        <span class="title">Publications</span>
+      </div>
+      <div class="pub-legend"><span class="me">G. Ren</span><sup class="corresponding">&#8225;</sup> = corresponding author</div>
+      <div class="pub-filters">
+        <div class="filter-group" id="field-filters">
+          <button class="filter-btn active" data-field="all">All</button>
+          ${[...new Set(pubs.map(p => p.field).filter(Boolean))]
+            .map(f => `<button class="filter-btn" data-field="${f}">${f}</button>`).join('')}
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Year</label>
+          <select id="year-filter" class="filter-select">
+            <option value="all">All</option>
+            ${[...new Set(pubs.map(p => p.year).filter(Boolean))]
+              .sort((a, b) => b - a)
+              .map(y => `<option value="${y}">${y}</option>`).join('')}
+          </select>
+        </div>
+        <span class="filter-count" id="filter-count"></span>
+      </div>
+      <ul class="pub-list">
+        ${pubs.map(buildPubItem).join('')}
+      </ul>
+    </div>
+
+    <!-- STATUS -->
+    <div class="status-bar fade-in">
+      <div class="sync-status">
+        <div class="sync-dot ok"></div>
+        <span>Auto-synced from Google Scholar</span>
+      </div>
+      <span>Last updated: ${updatedDate}</span>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer fade-in">
+      <div class="ascii">
+╔══════════════════════════════════════════╗<br>
+║  Built with &lt;code/&gt; &amp; GitHub Actions  ║<br>
+╚══════════════════════════════════════════╝
+      </div>
+      <br>
+      <span>${new Date().getFullYear()} &copy; Guanghui Ren</span>
+      <span class="terminal-cursor"></span>
+    </div>
+  `;
+
+  setupFilters();
+}
+
+function setupFilters() {
+  const items = [...document.querySelectorAll('.pub-item')];
+  const fieldBtns = [...document.querySelectorAll('#field-filters .filter-btn')];
+  const yearSel = document.getElementById('year-filter');
+  const countEl = document.getElementById('filter-count');
+  if (!items.length || !yearSel) return;
+
+  let activeField = 'all';
+
+  function apply() {
+    const year = yearSel.value;
+    let shown = 0;
+    items.forEach(li => {
+      const okField = activeField === 'all' || li.dataset.field === activeField;
+      const okYear = year === 'all' || li.dataset.year === year;
+      const visible = okField && okYear;
+      li.style.display = visible ? '' : 'none';
+      if (visible) shown++;
+    });
+    countEl.textContent = `${shown} / ${items.length}`;
+  }
+
+  fieldBtns.forEach(btn => btn.addEventListener('click', () => {
+    fieldBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeField = btn.dataset.field;
+    apply();
+  }));
+  yearSel.addEventListener('change', apply);
+
+  apply();
+}
+
+async function loadData() {
+  try {
+    const BASE = location.pathname.replace(/\/[^/]*$/, '/');
+    const resp = await fetch(BASE + 'data.json?t=' + Date.now());
+    if (!resp.ok) throw new Error('data.json not found');
+    const data = await resp.json();
+    render(data);
+  } catch (e) {
+    console.warn('Failed to load data.json, using fallback:', e);
+    render(getFallbackData());
+  }
+}
+
+function getFallbackData() {
+  return {
+    stats: { total_citations: 1345, h_index: 14, i10_index: 17 },
+    updated_at: new Date().toISOString(),
+    papers: [
+      { title: "ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models", authors: "L Zhong, Y Liu, Y Wei, Z Xiong, M Yao, S Liu, G Ren", venue: "CVPR 2026, 2026", citations: 20, year: 2026, field: "VLA", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:mvPsJ3kp5DgC" },
+      { title: "Roboclaw: An agentic framework for scalable long-horizon robotic tasks", authors: "Ruiying Li, Yunlang Zhou, YuYao Zhu, Kylin Chen, Jingyuan Wang, Sukai Wang, Kongtao Hu, Minhui Yu, Bowen Jiang, Zhan Su, Jiayao Ma, Xin He, Yongjian Shen, Yang Yang, Guanghui Ren, Maoqing Yao, Wenhao Wang, Yao Mu", venue: "arXiv preprint arXiv:2603.11558, 2026", citations: 9, year: 2026, field: "Robot Learning", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:1qzjygNMrQYC" },
+      { title: "AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models", authors: "X Li, M Cai, J Xu, J Zhu, H Fan, Y Shen, G Ren, H Dong", venue: "CVPR 2026, 2026", citations: 4, year: 2026, field: "VLA", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:olpn-zPbct0C" },
+      { title: "Ge-sim 2.0: A roadmap towards comprehensive closed-loop video world simulators for robotic manipulation", authors: "Boxiang Qiu, Liliang Chen, Yue Liao, Nan Wang, Lintao Wang, Jiayi Luo, Wenzhi Zhao, Shengcong Chen, Di Chen, Ye Li, Chen Gao, Shuicheng Yan, Si Liu, Maoqing Yao, Guanghui Ren", venue: "arXiv preprint arXiv:2605.27491, 2026", citations: 2, year: 2026, field: "World Model", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:HE397vMXCloC" },
+      { title: "Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System", authors: "Y Wei, L Zhong, Y Liu, Y Lu, X He, M Yao, G Ren", venue: "ACL 2026, 2026", citations: 0, year: 2026, field: "VLA", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:XiVPGOgt02cC" },
+      { title: "Agibot world colosseo: A large-scale manipulation platform for scalable and intelligent embodied systems", authors: "Qingwen Bu, Jisong Cai, Li Chen, Xiuqi Cui, Yan Ding, Siyuan Feng, Shenyuan Gao, Xindong He, Xu Huang, Shu Jiang, Yuxin Jiang, Cheng Jing, Hongyang Li, Jialu Li, Chiming Liu, Yi Liu, Yuxiang Lu, Jianlan Luo, Ping Luo, Yao Mu, Yuehan Niu, Yixuan Pan, Jiangmiao Pang, Yu Qiao, Guanghui Ren, Cheng Ruan, Jiaqi Shan, Yongjian Shen, Chengshi Shi, Mingkang Shi, Modi Shi, Chonghao Sima, Jianheng Song, Huijie Wang, Wenhao Wang, Dafeng Wei, Chengen Xie, Guo Xu, Junchi Yan, Cunbiao Yang, Lei Yang, Shukai Yang, Maoqing Yao, Jia Zeng, Chi Zhang, Qinglin Zhang, Bin Zhao, Chengyue Zhao, Jiaqi Zhao, Jianchao Zhu", venue: "🏆IROS 2025, Best Paper Award Finalist, 2025", citations: 340, year: 2025, field: "Robot Learning", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:WbkHhVStYXYC" },
+      { title: "UniVLA: Learning to Act Anywhere with Task-centric Latent Actions", authors: "Q Bu, Y Yang, J Cai, S Gao, G Ren, M Yao, P Luo, H Li", venue: "Robotics: Science and Systems (RSS), 2025, 2025", citations: 332, year: 2025, field: "VLA", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:u9iWguZQMMsC" },
+      { title: "Genie envisioner: A unified world foundation platform for robotic manipulation", authors: "Yue Liao, Pengfei Zhou, Siyuan Huang, Donglin Yang, Shengcong Chen, Yuxin Jiang, Yue Hu, Jingbin Cai, Si Liu, Jianlan Luo, Liliang Chen, Shuicheng Yan, Maoqing Yao, Guanghui Ren", venue: "ICLR 2026, 2025", citations: 113, year: 2025, field: "World Model", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:tS2w5q8j5-wC" },
+      { title: "Hume: Introducing system-2 thinking in visual-language-action model", authors: "Haoming Song, Delin Qu, Yuanqi Yao, Qizhi Chen, Qi Lv, Yiwen Tang, Modi Shi, Guanghui Ren, Maoqing Yao, Bin Zhao, Dong Wang, Xuelong Li", venue: "CVPR 2026, 2025", citations: 77, year: 2025, field: "VLA", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:738O_yMBCRsC" },
+      { title: "Enerverse: Envisioning embodied future space for robotics manipulation", authors: "Siyuan Huang, Liliang Chen, Pengfei Zhou, Shengcong Chen, Zhengkai Jiang, Yue Hu, Yue Liao, Peng Gao, Hongsheng Li, Maoqing Yao, Guanghui Ren", venue: "NeurIPS 2025, 2025", citations: 74, year: 2025, field: "World Model", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:a0OBvERweLwC" },
+      { title: "Eo-1: Interleaved vision-text-action pretraining for general robot control", authors: "Delin Qu, Haoming Song, Qizhi Chen, Zhaoqing Chen, Xianqiang Gao, Xinyi Ye, Qi Lv, Modi Shi, Guanghui Ren, Cheng Ruan, Maoqing Yao, Haoran Yang, Jiacheng Bao, Bin Zhao, Dong Wang", venue: "arXiv preprint arXiv:2508.21112, 2025", citations: 53, year: 2025, field: "VLA", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:8AbLer7MMksC" },
+      { title: "Enerverse-ac: Envisioning embodied environments with action condition", authors: "Yuxin Jiang, Shengcong Chen, Siyuan Huang, Liliang Chen, Pengfei Zhou, Yue Liao, Xindong He, Chiming Liu, Hongsheng Li, Maoqing Yao, Guanghui Ren", venue: "NeurIPS 2025 WM Workshop Outstanding Paper, 2025", citations: 45, year: 2025, field: "World Model", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:Tiz5es2fbqcC" },
+      { title: "Ewmbench: Evaluating scene, motion, and semantic quality in embodied world models", authors: "H Yue, S Huang, Y Liao, S Chen, P Zhou, L Chen, M Yao, G Ren", venue: "BMVC 2025, 2025", citations: 30, year: 2025, field: "World Model", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:XiSMed-E-HIC" },
+      { title: "Is Diversity All You Need for Scalable Robotic Manipulation?", authors: "M Shi, L Chen, J Chen, Y Lu, C Liu, G Ren, P Luo, D Huang, M Yao, H Li", venue: "IEEE Transactions on Robotics (T-RO), 2025", citations: 26, year: 2025, field: "Robot Learning", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:08ZZubdj9fEC" },
+      { title: "Grpo-ma: Multi-answer generation in grpo for stable and efficient chain-of-thought training", authors: "H Wang, Y Huang, S Wang, G Ren, H Dong", venue: "ICML 2026, 2025", citations: 12, year: 2025, field: "Robot Learning", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:sSrBHYA8nusC" },
+      { title: "Genie centurion: Accelerating scalable real-world robot training with human rewind-and-refine guidance", authors: "Wenhao Wang, Jianheng Song, Chiming Liu, Jiayao Ma, Siyuan Feng, Jingyuan Wang, Yuxin Jiang, Kylin Chen, Sikang Zhan, Yi Wang, Tong Meng, Modi Shi, Xindong He, Guanghui Ren, Yang Yang, Maoqing Yao", venue: "arXiv preprint arXiv:2505.18793, 2025", citations: 12, year: 2025, field: "Robot Learning", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:K3LRdlH-MEoC" },
+      { title: "Adversarial data collection: Human-collaborative perturbations for efficient and robust robotic imitation learning", authors: "S Huang, Y Liao, S Feng, S Jiang, S Liu, H Li, M Yao, G Ren", venue: "arXiv preprint arXiv:2503.11646, 2025", citations: 12, year: 2025, field: "Robot Learning", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:P5F9QuxV20EC" },
+      { title: "Act2Goal: From World Model To General Goal-conditioned Policy", authors: "P Zhou, L Chen, S Chen, D Chen, W Zhao, R Jin, G Ren, J Luo", venue: "Robotics: Science and Systems (RSS), 2026, 2025", citations: 9, year: 2025, field: "World Model", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:BrmTIyaxlBUC" },
+      { title: "Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface", authors: "Y Zhao, H Fan, D Chen, S Chen, L Chen, X Li, G Ren, H Dong", venue: "CVPR 2026, 2025", citations: 6, year: 2025, field: "Robot Learning", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:eflP2zaiRacC" },
+      { title: "Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized Pre-training", authors: "Yi Liu, Sukai Wang, Dafeng Wei, Xiaowei Cai, Linqing Zhong, Jiange Yang, Guanghui Ren, Jinyu Zhang, Maoqing Yao, Chuankang Li, Xindong He, Liliang Chen, Jianlan Luo", venue: "arXiv preprint arXiv:2512.24125, 2025", citations: 4, year: 2025, field: "VLA", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:q3oQSFYPqjQC" },
+      { title: "Fidelity-Aware Data Composition for Robust Robot Generalization", authors: "Z Tong, D Chen, S Hu, H Fan, L Chen, G Ren, H Tang, H Dong, L Shao", venue: "arXiv preprint arXiv:2509.24797, 2025", citations: 3, year: 2025, field: "Robot Learning", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:geHnlv5EZngC" },
+      { title: "Imagine2Act: Leveraging Object-Action Motion Consistency from Imagined Goals for Robotic Manipulation", authors: "L Heng, J Xu, Y Wang, X Li, M Cai, Y Shen, J Zhu, G Ren, H Dong", venue: "ICRA 2026, 2025", citations: 2, year: 2025, field: "Robot Learning", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:B3FOqHPlNUQC" },
+      { title: "Human-centric Relation Segmentation: Dataset and Solution", authors: "S Liu, Z Wang, Y Gao, L Ren, Y Liao, G Ren, B Li, S Yan", venue: "IEEE Transactions on Pattern Analysis and Machine Intelligence(TPAMI), 2021", citations: 19, year: 2021, field: "Vision", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:maZDTaKrznsC" },
+      { title: "Improved Pillar with Fine-grained Feature for 3D Object Detection", authors: "J Fu*, G Ren*, Y Chen, S Liu", venue: "arXiv preprint arXiv:2110.06049, 2021", citations: 6, year: 2021, field: "Vision", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:M3NEmzRMIkIC" },
+      { title: "Scene Graph Generation With Hierarchical Context", authors: "G Ren, L Ren, Y Liao, S Liu, B Li, J Han, S Yan", venue: "IEEE Transactions on Neural Networks and Learning Systems(TNNLS), 2020", citations: 46, year: 2020, field: "Vision", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:iH-uZ7U-co4C" },
+      { title: "Video Relation Detection with Trajectory-aware Multi-modal Features", authors: "W Xie*, G Ren*, S Liu", venue: "Proceedings of the 28th ACM International Conference on Multimedia(ACM MM), 2020", citations: 28, year: 2020, field: "Vision", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:isC4tDSrTZIC" },
+      { title: "Proxylesskd: Direct knowledge distillation with inherited classifier for face recognition", authors: "W Shi*, G Ren*, Y Chen, S Yan", venue: "arXiv preprint arXiv:2011.00265, 2020", citations: 9, year: 2020, field: "Vision", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:k_IJM867U9cC" },
+      { title: "Fine-grained Human-centric Tracklet Segmentation with Single Frame Supervision", authors: "S Liu, G Ren, Y Sun, J Wang, C Wang, B Li, S Yan", venue: "IEEE transactions on pattern analysis and machine intelligence(TPAMI), 2019", citations: 5, year: 2019, field: "Vision", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:_Qo2XoVZTnwC" },
+      { title: "Cross-domain human parsing via adversarial feature and label adaptation", authors: "S Liu, Y Sun, D Zhu, G Ren, Y Chen, J Feng, J Han", venue: "AAAI 2018, 2018", citations: 45, year: 2018, field: "Vision", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:R3hNpaxXUhUC" },
+      { title: "RSVP: A Real-Time Surveillance Video Parsing System with Single Frame Supervision", authors: "H Yu*, G Ren*, R Qian, Y Sun, C Wang, H Lu, S Liu", venue: "Proceedings of the 25th ACM international conference on Multimedia(ACM MM), 2017", citations: 2, year: 2017, field: "Vision", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:TQgYirikUcIC" },
+    ],
+  };
+}
+
+loadData();
+</script>
+</body>
+</html>
