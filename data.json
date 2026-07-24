@@ -1,0 +1,281 @@
+{
+  "stats": {
+    "total_citations": 1345,
+    "h_index": 14,
+    "i10_index": 17
+  },
+  "updated_at": "2026-07-24T03:15:38.972326+00:00",
+  "user_id": "oqN1dA8AAAAJ",
+  "papers": [
+    {
+      "title": "ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models",
+      "authors": "L Zhong, Y Liu, Y Wei, Z Xiong, M Yao, S Liu, G Ren",
+      "venue": "CVPR 2026, 2026",
+      "citations": 20,
+      "year": 2026,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:mvPsJ3kp5DgC",
+      "field": "VLA"
+    },
+    {
+      "title": "Roboclaw: An agentic framework for scalable long-horizon robotic tasks",
+      "authors": "Ruiying Li, Yunlang Zhou, YuYao Zhu, Kylin Chen, Jingyuan Wang, Sukai Wang, Kongtao Hu, Minhui Yu, Bowen Jiang, Zhan Su, Jiayao Ma, Xin He, Yongjian Shen, Yang Yang, Guanghui Ren, Maoqing Yao, Wenhao Wang, Yao Mu",
+      "venue": "arXiv preprint arXiv:2603.11558, 2026",
+      "citations": 9,
+      "year": 2026,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:1qzjygNMrQYC",
+      "field": "Robot Learning"
+    },
+    {
+      "title": "AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models",
+      "authors": "X Li, M Cai, J Xu, J Zhu, H Fan, Y Shen, G Ren, H Dong",
+      "venue": "CVPR 2026, 2026",
+      "citations": 4,
+      "year": 2026,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:olpn-zPbct0C",
+      "field": "VLA"
+    },
+    {
+      "title": "Ge-sim 2.0: A roadmap towards comprehensive closed-loop video world simulators for robotic manipulation",
+      "authors": "Boxiang Qiu, Liliang Chen, Yue Liao, Nan Wang, Lintao Wang, Jiayi Luo, Wenzhi Zhao, Shengcong Chen, Di Chen, Ye Li, Chen Gao, Shuicheng Yan, Si Liu, Maoqing Yao, Guanghui Ren",
+      "venue": "arXiv preprint arXiv:2605.27491, 2026",
+      "citations": 2,
+      "year": 2026,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:HE397vMXCloC",
+      "field": "World Model"
+    },
+    {
+      "title": "Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System",
+      "authors": "Y Wei, L Zhong, Y Liu, Y Lu, X He, M Yao, G Ren",
+      "venue": "ACL 2026, 2026",
+      "citations": 0,
+      "year": 2026,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:XiVPGOgt02cC",
+      "field": "VLA"
+    },
+    {
+      "title": "Agibot world colosseo: A large-scale manipulation platform for scalable and intelligent embodied systems",
+      "authors": "Qingwen Bu, Jisong Cai, Li Chen, Xiuqi Cui, Yan Ding, Siyuan Feng, Shenyuan Gao, Xindong He, Xu Huang, Shu Jiang, Yuxin Jiang, Cheng Jing, Hongyang Li, Jialu Li, Chiming Liu, Yi Liu, Yuxiang Lu, Jianlan Luo, Ping Luo, Yao Mu, Yuehan Niu, Yixuan Pan, Jiangmiao Pang, Yu Qiao, Guanghui Ren, Cheng Ruan, Jiaqi Shan, Yongjian Shen, Chengshi Shi, Mingkang Shi, Modi Shi, Chonghao Sima, Jianheng Song, Huijie Wang, Wenhao Wang, Dafeng Wei, Chengen Xie, Guo Xu, Junchi Yan, Cunbiao Yang, Lei Yang, Shukai Yang, Maoqing Yao, Jia Zeng, Chi Zhang, Qinglin Zhang, Bin Zhao, Chengyue Zhao, Jiaqi Zhao, Jianchao Zhu",
+      "venue": "🏆IROS 2025, Best Paper Award Finalist, 2025",
+      "citations": 340,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:WbkHhVStYXYC",
+      "field": "Robot Learning"
+    },
+    {
+      "title": "UniVLA: Learning to Act Anywhere with Task-centric Latent Actions",
+      "authors": "Q Bu, Y Yang, J Cai, S Gao, G Ren, M Yao, P Luo, H Li",
+      "venue": "Robotics: Science and Systems (RSS), 2025, 2025",
+      "citations": 332,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:u9iWguZQMMsC",
+      "field": "VLA"
+    },
+    {
+      "title": "Genie envisioner: A unified world foundation platform for robotic manipulation",
+      "authors": "Yue Liao, Pengfei Zhou, Siyuan Huang, Donglin Yang, Shengcong Chen, Yuxin Jiang, Yue Hu, Jingbin Cai, Si Liu, Jianlan Luo, Liliang Chen, Shuicheng Yan, Maoqing Yao, Guanghui Ren",
+      "venue": "ICLR 2026, 2025",
+      "citations": 113,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:tS2w5q8j5-wC",
+      "field": "World Model"
+    },
+    {
+      "title": "Hume: Introducing system-2 thinking in visual-language-action model",
+      "authors": "Haoming Song, Delin Qu, Yuanqi Yao, Qizhi Chen, Qi Lv, Yiwen Tang, Modi Shi, Guanghui Ren, Maoqing Yao, Bin Zhao, Dong Wang, Xuelong Li",
+      "venue": "CVPR 2026, 2025",
+      "citations": 77,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:738O_yMBCRsC",
+      "field": "VLA"
+    },
+    {
+      "title": "Enerverse: Envisioning embodied future space for robotics manipulation",
+      "authors": "Siyuan Huang, Liliang Chen, Pengfei Zhou, Shengcong Chen, Zhengkai Jiang, Yue Hu, Yue Liao, Peng Gao, Hongsheng Li, Maoqing Yao, Guanghui Ren",
+      "venue": "NeurIPS 2025, 2025",
+      "citations": 74,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:a0OBvERweLwC",
+      "field": "World Model"
+    },
+    {
+      "title": "Eo-1: Interleaved vision-text-action pretraining for general robot control",
+      "authors": "Delin Qu, Haoming Song, Qizhi Chen, Zhaoqing Chen, Xianqiang Gao, Xinyi Ye, Qi Lv, Modi Shi, Guanghui Ren, Cheng Ruan, Maoqing Yao, Haoran Yang, Jiacheng Bao, Bin Zhao, Dong Wang",
+      "venue": "arXiv preprint arXiv:2508.21112, 2025",
+      "citations": 53,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:8AbLer7MMksC",
+      "field": "VLA"
+    },
+    {
+      "title": "Enerverse-ac: Envisioning embodied environments with action condition",
+      "authors": "Yuxin Jiang, Shengcong Chen, Siyuan Huang, Liliang Chen, Pengfei Zhou, Yue Liao, Xindong He, Chiming Liu, Hongsheng Li, Maoqing Yao, Guanghui Ren",
+      "venue": "NeurIPS 2025 WM Workshop Outstanding Paper, 2025",
+      "citations": 45,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:Tiz5es2fbqcC",
+      "field": "World Model"
+    },
+    {
+      "title": "Ewmbench: Evaluating scene, motion, and semantic quality in embodied world models",
+      "authors": "H Yue, S Huang, Y Liao, S Chen, P Zhou, L Chen, M Yao, G Ren",
+      "venue": "BMVC 2025, 2025",
+      "citations": 30,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:XiSMed-E-HIC",
+      "field": "World Model"
+    },
+    {
+      "title": "Is Diversity All You Need for Scalable Robotic Manipulation?",
+      "authors": "M Shi, L Chen, J Chen, Y Lu, C Liu, G Ren, P Luo, D Huang, M Yao, H Li",
+      "venue": "IEEE Transactions on Robotics (T-RO), 2025",
+      "citations": 26,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:08ZZubdj9fEC",
+      "field": "Robot Learning"
+    },
+    {
+      "title": "Grpo-ma: Multi-answer generation in grpo for stable and efficient chain-of-thought training",
+      "authors": "H Wang, Y Huang, S Wang, G Ren, H Dong",
+      "venue": "ICML 2026, 2025",
+      "citations": 12,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:sSrBHYA8nusC",
+      "field": "Robot Learning"
+    },
+    {
+      "title": "Genie centurion: Accelerating scalable real-world robot training with human rewind-and-refine guidance",
+      "authors": "Wenhao Wang, Jianheng Song, Chiming Liu, Jiayao Ma, Siyuan Feng, Jingyuan Wang, Yuxin Jiang, Kylin Chen, Sikang Zhan, Yi Wang, Tong Meng, Modi Shi, Xindong He, Guanghui Ren, Yang Yang, Maoqing Yao",
+      "venue": "arXiv preprint arXiv:2505.18793, 2025",
+      "citations": 12,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:K3LRdlH-MEoC",
+      "field": "Robot Learning"
+    },
+    {
+      "title": "Adversarial data collection: Human-collaborative perturbations for efficient and robust robotic imitation learning",
+      "authors": "S Huang, Y Liao, S Feng, S Jiang, S Liu, H Li, M Yao, G Ren",
+      "venue": "arXiv preprint arXiv:2503.11646, 2025",
+      "citations": 12,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:P5F9QuxV20EC",
+      "field": "Robot Learning"
+    },
+    {
+      "title": "Act2Goal: From World Model To General Goal-conditioned Policy",
+      "authors": "P Zhou, L Chen, S Chen, D Chen, W Zhao, R Jin, G Ren, J Luo",
+      "venue": "Robotics: Science and Systems (RSS), 2026, 2025",
+      "citations": 9,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:BrmTIyaxlBUC",
+      "field": "World Model"
+    },
+    {
+      "title": "Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface",
+      "authors": "Y Zhao, H Fan, D Chen, S Chen, L Chen, X Li, G Ren, H Dong",
+      "venue": "CVPR 2026, 2025",
+      "citations": 6,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:eflP2zaiRacC",
+      "field": "Robot Learning"
+    },
+    {
+      "title": "Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized Pre-training",
+      "authors": "Yi Liu, Sukai Wang, Dafeng Wei, Xiaowei Cai, Linqing Zhong, Jiange Yang, Guanghui Ren, Jinyu Zhang, Maoqing Yao, Chuankang Li, Xindong He, Liliang Chen, Jianlan Luo",
+      "venue": "arXiv preprint arXiv:2512.24125, 2025",
+      "citations": 4,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:q3oQSFYPqjQC",
+      "field": "VLA"
+    },
+    {
+      "title": "Fidelity-Aware Data Composition for Robust Robot Generalization",
+      "authors": "Z Tong, D Chen, S Hu, H Fan, L Chen, G Ren, H Tang, H Dong, L Shao",
+      "venue": "arXiv preprint arXiv:2509.24797, 2025",
+      "citations": 3,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:geHnlv5EZngC",
+      "field": "Robot Learning"
+    },
+    {
+      "title": "Imagine2Act: Leveraging Object-Action Motion Consistency from Imagined Goals for Robotic Manipulation",
+      "authors": "L Heng, J Xu, Y Wang, X Li, M Cai, Y Shen, J Zhu, G Ren, H Dong",
+      "venue": "ICRA 2026, 2025",
+      "citations": 2,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:B3FOqHPlNUQC",
+      "field": "Robot Learning"
+    },
+    {
+      "title": "Human-centric Relation Segmentation: Dataset and Solution",
+      "authors": "S Liu, Z Wang, Y Gao, L Ren, Y Liao, G Ren, B Li, S Yan",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence(TPAMI), 2021",
+      "citations": 19,
+      "year": 2021,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:maZDTaKrznsC",
+      "field": "Vision"
+    },
+    {
+      "title": "Improved Pillar with Fine-grained Feature for 3D Object Detection",
+      "authors": "J Fu*, G Ren*, Y Chen, S Liu",
+      "venue": "arXiv preprint arXiv:2110.06049, 2021",
+      "citations": 6,
+      "year": 2021,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:M3NEmzRMIkIC",
+      "field": "Vision"
+    },
+    {
+      "title": "Scene Graph Generation With Hierarchical Context",
+      "authors": "G Ren, L Ren, Y Liao, S Liu, B Li, J Han, S Yan",
+      "venue": "IEEE Transactions on Neural Networks and Learning Systems(TNNLS), 2020",
+      "citations": 46,
+      "year": 2020,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:iH-uZ7U-co4C",
+      "field": "Vision"
+    },
+    {
+      "title": "Video Relation Detection with Trajectory-aware Multi-modal Features",
+      "authors": "W Xie*, G Ren*, S Liu",
+      "venue": "Proceedings of the 28th ACM International Conference on Multimedia(ACM MM), 2020",
+      "citations": 28,
+      "year": 2020,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:isC4tDSrTZIC",
+      "field": "Vision"
+    },
+    {
+      "title": "Proxylesskd: Direct knowledge distillation with inherited classifier for face recognition",
+      "authors": "W Shi*, G Ren*, Y Chen, S Yan",
+      "venue": "arXiv preprint arXiv:2011.00265, 2020",
+      "citations": 9,
+      "year": 2020,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:k_IJM867U9cC",
+      "field": "Vision"
+    },
+    {
+      "title": "Fine-grained Human-centric Tracklet Segmentation with Single Frame Supervision",
+      "authors": "S Liu, G Ren, Y Sun, J Wang, C Wang, B Li, S Yan",
+      "venue": "IEEE transactions on pattern analysis and machine intelligence(TPAMI), 2019",
+      "citations": 5,
+      "year": 2019,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:_Qo2XoVZTnwC",
+      "field": "Vision"
+    },
+    {
+      "title": "Cross-domain human parsing via adversarial feature and label adaptation",
+      "authors": "S Liu, Y Sun, D Zhu, G Ren, Y Chen, J Feng, J Han",
+      "venue": "AAAI 2018, 2018",
+      "citations": 45,
+      "year": 2018,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:R3hNpaxXUhUC",
+      "field": "Vision"
+    },
+    {
+      "title": "RSVP: A Real-Time Surveillance Video Parsing System with Single Frame Supervision",
+      "authors": "H Yu*, G Ren*, R Qian, Y Sun, C Wang, H Lu, S Liu",
+      "venue": "Proceedings of the 25th ACM international conference on Multimedia(ACM MM), 2017",
+      "citations": 2,
+      "year": 2017,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:TQgYirikUcIC",
+      "field": "Vision"
+    }
+  ]
+}
