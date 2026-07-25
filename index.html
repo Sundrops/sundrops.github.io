@@ -80,7 +80,7 @@
   .scanline {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
-    pointer-events: none; z-index: 1000;
+    pointer-events: none; z-index: -1;
   }
 
   .container {
@@ -123,32 +123,24 @@
   .profile-section {
     display: flex; gap: 32px; padding: 32px; align-items: flex-start;
   }
-  .avatar-container { flex-shrink: 0; position: relative; }
+  .avatar-container { flex-shrink: 0; position: relative; width: 180px; height: 180px; z-index: 1001; }
   .avatar {
-    width: 140px; height: 140px; border-radius: 8px;
-    border: 2px solid var(--border); object-fit: cover;
-    filter: grayscale(30%); transition: filter 0.3s, border-color 0.3s;
+    width: 180px; height: 180px; border-radius: 8px;
+    border: 2px solid var(--border); object-fit: cover; display: block;
+    transition: filter 0.3s, border-color 0.3s;
   }
-  .avatar:hover { filter: grayscale(0%); border-color: var(--accent); }
+  .avatar:hover { border-color: var(--accent); }
   .avatar-frame {
     position: absolute; top: -4px; left: -4px; right: -4px; bottom: -4px;
     border: 1px solid var(--accent); border-radius: 10px; opacity: 0.3;
+    pointer-events: none;
   }
 
   .profile-info { flex: 1; }
-  .prompt-line {
-    font-family: 'JetBrains Mono', monospace; font-size: 13px;
-    color: var(--text-dim); margin-bottom: 4px;
-  }
-  .prompt-line .user { color: var(--accent); }
-  .prompt-line .at { color: var(--text-dim); }
-  .prompt-line .host { color: var(--accent2); }
-  .prompt-line .path { color: var(--accent3); }
-  .prompt-line .symbol { color: var(--text-dim); }
 
   .name {
     font-family: 'Space Grotesk', sans-serif; font-size: 32px;
-    font-weight: 700; color: var(--text-bright); margin: 8px 0 4px;
+    font-weight: 700; color: var(--text-bright); margin: 0;
     letter-spacing: -0.5px;
   }
   .name-cn { font-size: 18px; color: var(--text-dim); margin-bottom: 12px; }
@@ -251,7 +243,7 @@
     border-radius: 3px; padding: 0 6px; margin-left: 8px; opacity: .8;
   }
   .pub-meta {
-    display: flex; gap: 16px; margin-top: 6px;
+    display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 6px; align-items: center;
     font-family: 'JetBrains Mono', monospace; font-size: 11px;
   }
   .pub-meta .citations { color: var(--accent3); }
@@ -410,7 +402,7 @@ function buildPubItem(paper) {
 }
 
 const LINK_LABELS = {
-  code: 'GitHub', github: 'GitHub', hf: 'HuggingFace', huggingface: 'HuggingFace',
+  code: 'GitHub', github: 'GitHub', hf: 'HF', huggingface: 'HF',
   page: 'Project', project: 'Project', pdf: 'PDF', arxiv: 'arXiv',
   video: 'Video', demo: 'Demo', web: 'Web',
 };
@@ -447,14 +439,11 @@ function render(data) {
           <div class="avatar-frame"></div>
         </div>
         <div class="profile-info">
-          <div class="prompt-line">
-            <span class="user">guest</span><span class="at">@</span><span class="host">homepage</span><span class="path"> ~/</span><span class="symbol"> $</span>
-          </div>
           <h1 class="name glow-text">Guanghui Ren</h1>
           <p class="name-cn">任广辉</p>
           <div class="bio-line"><span class="key">role</span>=<span class="str">"Director"</span></div>
           <div class="bio-line"><span class="key">affiliation</span>=<span class="str">"AgiBot"</span></div>
-          <div class="bio-line"><span class="key">interests</span>=[<span class="val">"Robotics"</span>, <span class="val">"Embodied AI"</span>, <span class="val">"Manipulation"</span>]</div>
+          <div class="bio-line"><span class="key">interests</span>=[<span class="val">"Robotics"</span>, <span class="val">"Embodied AI"</span>, <span class="val">"World Model"</span>]</div>
           <div class="bio-line"><span class="key">email</span>=<span class="str">"<a class="email-link" data-user="renguanghui" data-domain="agibot.com" href="#" aria-label="email"></a>"</span></div>
           <div class="links">
             <a href="https://scholar.google.com/citations?user=oqN1dA8AAAAJ" class="link-btn" target="_blank"><span class="icon">📊</span> Scholar</a>
@@ -470,7 +459,7 @@ function render(data) {
         <span class="hash">#</span>
         <span class="title">Publications</span>
       </div>
-      <div class="pub-legend"><span class="me">G. Ren</span><sup class="corresponding">&#8225;</sup> = corresponding author</div>
+      <div class="pub-legend"><span class="me">G. Ren</span><sup class="corresponding">&#8225;</sup>/<span class="me">Guanghui Ren</span><sup class="corresponding">&#8225;</sup> = corresponding author</div>
       <div class="pub-filters">
         <div class="filter-group" id="field-filters">
           <button class="filter-btn active" data-field="all">All</button>
