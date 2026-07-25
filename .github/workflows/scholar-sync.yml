@@ -2,8 +2,17 @@ name: Sync Google Scholar
 
 on:
   schedule:
+    # Weekly light sync (Mon 08:00 UTC): stats + new papers, uses author cache.
     - cron: '0 8 * * 1'
+    # Quarterly full refresh (1st of Jan/Apr/Jul/Oct, 07:00 UTC): re-pull every
+    # detail page to pick up merged papers / updated authors / venue changes.
+    - cron: '0 7 1 1,4,7,10 *'
   workflow_dispatch:
+    inputs:
+      full_refresh:
+        description: 'Full refresh (re-fetch every paper detail page)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -24,6 +33,9 @@ jobs:
       - name: Fetch Scholar data
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          # Full refresh when triggered by the quarterly cron OR when manually
+          # dispatched with the full_refresh box ticked.
+          FULL_REFRESH: ${{ (github.event.schedule == '0 7 1 1,4,7,10 *' || github.event.inputs.full_refresh == 'true') && '1' || '0' }}
         run: python scripts/fetch_scholar.py
 
       - name: Commit data
