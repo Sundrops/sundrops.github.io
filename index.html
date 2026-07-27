@@ -256,11 +256,13 @@
 
   /* STATUS */
   .status-bar {
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+    gap: 6px 16px;
     font-family: 'JetBrains Mono', monospace; font-size: 11px;
     color: var(--text-dim); padding: 12px 0; border-top: 1px solid var(--border);
   }
   .sync-status { display: flex; align-items: center; gap: 6px; }
+  .status-bar .visits { color: var(--accent3); white-space: nowrap; }
   .sync-dot { width: 6px; height: 6px; border-radius: 50%; }
   .sync-dot.ok { background: var(--green); }
   .sync-dot.err { background: var(--red); }
@@ -488,6 +490,7 @@ function render(data) {
         <div class="sync-dot ok"></div>
         <span>Auto-synced from Google Scholar</span>
       </div>
+      <span class="visits" id="visit-count" title="Total page views">👁 <span id="visit-num">…</span> views</span>
       <span>Last updated: ${updatedDate}</span>
     </div>
 
@@ -507,6 +510,7 @@ function render(data) {
   setupFilters();
   setupEmail();
   bindThemeToggle();
+  fetchVisits();
 }
 
 function setupFilters() {
@@ -635,7 +639,21 @@ function getFallbackData() {
   };
 }
 
+// Fetches total page views from GoatCounter and shows it in the status bar.
+function fetchVisits() {
+  const el = document.getElementById('visit-num');
+  if (!el) return;
+  fetch('https://sundrops.goatcounter.com/counter/TOTAL.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(d => { el.textContent = (d.count || '0').toString().trim(); })
+    .catch(() => { const w = document.getElementById('visit-count'); if (w) w.style.display = 'none'; });
+}
+
+applyStoredTheme();
 loadData();
 </script>
+<!-- GoatCounter analytics (privacy-friendly, no cookies) -->
+<script data-goatcounter="https://sundrops.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
