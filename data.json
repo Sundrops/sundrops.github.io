@@ -1,17 +1,17 @@
 {
   "stats": {
-    "total_citations": 1527,
+    "total_citations": 1558,
     "h_index": 14,
     "i10_index": 19
   },
-  "updated_at": "2026-08-31T15:49:59.130131+00:00",
+  "updated_at": "2026-09-07T13:58:02.839425+00:00",
   "user_id": "oqN1dA8AAAAJ",
   "papers": [
     {
       "title": "ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models",
       "authors": "L Zhong, Y Liu, Y Wei, Z Xiong, M Yao, S Liu, G Ren",
       "venue": "CVPR 2026, 2026",
-      "citations": 33,
+      "citations": 36,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:mvPsJ3kp5DgC",
       "field": "VLA",
@@ -26,7 +26,7 @@
       "title": "Roboclaw: An agentic framework for scalable long-horizon robotic tasks",
       "authors": "Ruiying Li, Yunlang Zhou, YuYao Zhu, Kylin Chen, Jingyuan Wang, Sukai Wang, Kongtao Hu, Minhui Yu, Bowen Jiang, Zhan Su, Jiayao Ma, Xin He, Yongjian Shen, Yang Yang, Guanghui Ren, Maoqing Yao, Wenhao Wang, Yao Mu",
       "venue": "ECCV 2026, 2026",
-      "citations": 12,
+      "citations": 13,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:1qzjygNMrQYC",
       "field": "Robot Learning",
@@ -93,7 +93,7 @@
       "title": "UniVLA: Learning to Act Anywhere with Task-centric Latent Actions",
       "authors": "Q Bu, Y Yang, J Cai, S Gao, G Ren, M Yao, P Luo, H Li",
       "venue": "Robotics: Science and Systems (RSS), 2025, 2025",
-      "citations": 395,
+      "citations": 402,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:u9iWguZQMMsC",
       "field": "VLA",
@@ -112,7 +112,7 @@
       "title": "Agibot world colosseo: A large-scale manipulation platform for scalable and intelligent embodied systems",
       "authors": "Qingwen Bu, Jisong Cai, Li Chen, Xiuqi Cui, Yan Ding, Siyuan Feng, Shenyuan Gao, Xindong He, Xu Huang, Shu Jiang, Yuxin Jiang, Cheng Jing, Hongyang Li, Jialu Li, Chiming Liu, Yi Liu, Yuxiang Lu, Jianlan Luo, Ping Luo, Yao Mu, Yuehan Niu, Yixuan Pan, Jiangmiao Pang, Yu Qiao, Guanghui Ren, Cheng Ruan, Jiaqi Shan, Yongjian Shen, Chengshi Shi, Mingkang Shi, Modi Shi, Chonghao Sima, Jianheng Song, Huijie Wang, Wenhao Wang, Dafeng Wei, Chengen Xie, Guo Xu, Junchi Yan, Cunbiao Yang, Lei Yang, Shukai Yang, Maoqing Yao, Jia Zeng, Chi Zhang, Qinglin Zhang, Bin Zhao, Chengyue Zhao, Jiaqi Zhao, Jianchao Zhu",
       "venue": "🏆IROS 2025, Best Paper Award Finalist, 2025",
-      "citations": 370,
+      "citations": 378,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:WbkHhVStYXYC",
       "field": "Robot Learning",
@@ -135,7 +135,7 @@
       "title": "Genie envisioner: A unified world foundation platform for robotic manipulation",
       "authors": "Yue Liao, Pengfei Zhou, Siyuan Huang, Donglin Yang, Shengcong Chen, Yuxin Jiang, Yue Hu, Jingbin Cai, Si Liu, Jianlan Luo, Liliang Chen, Shuicheng Yan, Maoqing Yao, Guanghui Ren",
       "venue": "ICLR 2026, 2025",
-      "citations": 137,
+      "citations": 141,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:tS2w5q8j5-wC",
       "field": "World Model",
@@ -181,7 +181,7 @@
       "title": "Enerverse: Envisioning embodied future space for robotics manipulation",
       "authors": "Siyuan Huang, Liliang Chen, Pengfei Zhou, Shengcong Chen, Zhengkai Jiang, Yue Hu, Yue Liao, Peng Gao, Hongsheng Li, Maoqing Yao, Guanghui Ren",
       "venue": "NeurIPS 2025, 2025",
-      "citations": 77,
+      "citations": 81,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:a0OBvERweLwC",
       "field": "World Model",
@@ -248,7 +248,7 @@
       "title": "Is Diversity All You Need for Scalable Robotic Manipulation?",
       "authors": "M Shi, L Chen, J Chen, Y Lu, C Liu, G Ren, P Luo, D Huang, M Yao, H Li",
       "venue": "IEEE Transactions on Robotics (T-RO), 2025",
-      "citations": 33,
+      "citations": 34,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:08ZZubdj9fEC",
       "field": "Robot Learning",
@@ -256,6 +256,21 @@
         {
           "type": "code",
           "url": "https://github.com/OpenDriveLab/AgiBot-World"
+        }
+      ]
+    },
+    {
+      "title": "Grpo-ma: Multi-answer generation in grpo for stable and efficient chain-of-thought training",
+      "authors": "H Wang, Y Huang, S Wang, G Ren, H Dong",
+      "venue": "ICML 2026, 2025",
+      "citations": 13,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:sSrBHYA8nusC",
+      "field": "Robot Learning",
+      "links": [
+        {
+          "type": "code",
+          "url": "https://github.com/whcpumpkin/GRPO-MA"
         }
       ]
     },
@@ -286,21 +301,6 @@
         {
           "type": "page",
           "url": "https://sites.google.com/view/adc-robot"
-        }
-      ]
-    },
-    {
-      "title": "Grpo-ma: Multi-answer generation in grpo for stable and efficient chain-of-thought training",
-      "authors": "H Wang, Y Huang, S Wang, G Ren, H Dong",
-      "venue": "ICML 2026, 2025",
-      "citations": 12,
-      "year": 2025,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:sSrBHYA8nusC",
-      "field": "Robot Learning",
-      "links": [
-        {
-          "type": "code",
-          "url": "https://github.com/whcpumpkin/GRPO-MA"
         }
       ]
     },
@@ -342,7 +342,7 @@
       "title": "Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized Pre-training",
       "authors": "Yi Liu, Sukai Wang, Dafeng Wei, Xiaowei Cai, Linqing Zhong, Jiange Yang, Guanghui Ren, Jinyu Zhang, Maoqing Yao, Chuankang Li, Xindong He, Liliang Chen, Jianlan Luo",
       "venue": "arXiv preprint arXiv:2512.24125, 2025",
-      "citations": 4,
+      "citations": 5,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:q3oQSFYPqjQC",
       "field": "VLA",
@@ -354,20 +354,10 @@
       ]
     },
     {
-      "title": "Fidelity-aware data composition for robust robot generalization",
-      "authors": "Z Tong, D Chen, S Hu, H Fan, L Chen, G Ren, H Tang, H Dong, L Shao",
-      "venue": "arXiv preprint arXiv:2509.24797, 2025",
-      "citations": 3,
-      "year": 2025,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:geHnlv5EZngC",
-      "field": "Robot Learning",
-      "links": []
-    },
-    {
       "title": "Imagine2Act: Leveraging Object-Action Motion Consistency from Imagined Goals for Robotic Manipulation",
       "authors": "L Heng, J Xu, Y Wang, X Li, M Cai, Y Shen, J Zhu, G Ren, H Dong",
       "venue": "ICRA 2026, 2025",
-      "citations": 3,
+      "citations": 4,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:B3FOqHPlNUQC",
       "field": "Robot Learning",
@@ -381,6 +371,16 @@
           "url": "https://github.com/LiangHeng121/Imagine2Act"
         }
       ]
+    },
+    {
+      "title": "Fidelity-aware data composition for robust robot generalization",
+      "authors": "Z Tong, D Chen, S Hu, H Fan, L Chen, G Ren, H Tang, H Dong, L Shao",
+      "venue": "arXiv preprint arXiv:2509.24797, 2025",
+      "citations": 3,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:geHnlv5EZngC",
+      "field": "Robot Learning",
+      "links": []
     },
     {
       "title": "Human-centric Relation Segmentation: Dataset and Solution",
