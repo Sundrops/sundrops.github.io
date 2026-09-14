@@ -1,17 +1,17 @@
 {
   "stats": {
-    "total_citations": 1558,
-    "h_index": 14,
+    "total_citations": 1577,
+    "h_index": 15,
     "i10_index": 19
   },
-  "updated_at": "2026-09-07T13:58:02.839425+00:00",
+  "updated_at": "2026-09-14T14:43:15.430064+00:00",
   "user_id": "oqN1dA8AAAAJ",
   "papers": [
     {
       "title": "ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models",
       "authors": "L Zhong, Y Liu, Y Wei, Z Xiong, M Yao, S Liu, G Ren",
       "venue": "CVPR 2026, 2026",
-      "citations": 36,
+      "citations": 38,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:mvPsJ3kp5DgC",
       "field": "VLA",
@@ -26,7 +26,7 @@
       "title": "Roboclaw: An agentic framework for scalable long-horizon robotic tasks",
       "authors": "Ruiying Li, Yunlang Zhou, YuYao Zhu, Kylin Chen, Jingyuan Wang, Sukai Wang, Kongtao Hu, Minhui Yu, Bowen Jiang, Zhan Su, Jiayao Ma, Xin He, Yongjian Shen, Yang Yang, Guanghui Ren, Maoqing Yao, Wenhao Wang, Yao Mu",
       "venue": "ECCV 2026, 2026",
-      "citations": 13,
+      "citations": 15,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:1qzjygNMrQYC",
       "field": "Robot Learning",
@@ -55,7 +55,7 @@
       "title": "Ge-sim 2.0: A roadmap towards comprehensive closed-loop video world simulators for robotic manipulation",
       "authors": "Boxiang Qiu, Liliang Chen, Yue Liao, Nan Wang, Lintao Wang, Jiayi Luo, Wenzhi Zhao, Shengcong Chen, Di Chen, Ye Li, Chen Gao, Shuicheng Yan, Si Liu, Maoqing Yao, Guanghui Ren",
       "venue": "arXiv preprint arXiv:2605.27491, 2026",
-      "citations": 3,
+      "citations": 4,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:HE397vMXCloC",
       "field": "World Model",
@@ -90,10 +90,20 @@
       ]
     },
     {
+      "title": "GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation",
+      "authors": "Renhang Liu, Wenzhi Zhao, Zhuo Yang, Liliang Chen, Pengfei Zhou, Shengcong Chen, Guanghui Ren, Youlun Peng, Rongjun Jin, Nan Wang, Sukai Wang, Xindong He, Jinyuan Feng, Ziyu Xiong, Linqing Zhong, Yifei Wei, Feng Han, Long Zhang, Da Huang, Nanshu Zhao, Chenghao Yin, Mo Wu, Zhaodong Yan, Kongtao Hu, Yuxiang Yan, Aogelijiang Niyazi, Yu Fang, Jia Zeng, Lizhu Meng, Daizhen Lv, Haoyu Cao, Zhiwen Hou, Lianjin Ye, Yuehan Niu, Zhikai Cai, Xuan Hu, Hui Min, Xiongfeng Cai, Yue Liao, Jing Wu, Soujanya Poria, Ye Li, Sanping Zhou, Maoqing Yao, AgiBot Research Team",
+      "venue": "arXiv preprint arXiv:2609.05588, 2026",
+      "citations": 0,
+      "year": 2026,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:tkaPQYYpVKoC",
+      "field": "Robot Learning",
+      "links": []
+    },
+    {
       "title": "UniVLA: Learning to Act Anywhere with Task-centric Latent Actions",
       "authors": "Q Bu, Y Yang, J Cai, S Gao, G Ren, M Yao, P Luo, H Li",
       "venue": "Robotics: Science and Systems (RSS), 2025, 2025",
-      "citations": 402,
+      "citations": 406,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:u9iWguZQMMsC",
       "field": "VLA",
@@ -112,7 +122,7 @@
       "title": "Agibot world colosseo: A large-scale manipulation platform for scalable and intelligent embodied systems",
       "authors": "Qingwen Bu, Jisong Cai, Li Chen, Xiuqi Cui, Yan Ding, Siyuan Feng, Shenyuan Gao, Xindong He, Xu Huang, Shu Jiang, Yuxin Jiang, Cheng Jing, Hongyang Li, Jialu Li, Chiming Liu, Yi Liu, Yuxiang Lu, Jianlan Luo, Ping Luo, Yao Mu, Yuehan Niu, Yixuan Pan, Jiangmiao Pang, Yu Qiao, Guanghui Ren, Cheng Ruan, Jiaqi Shan, Yongjian Shen, Chengshi Shi, Mingkang Shi, Modi Shi, Chonghao Sima, Jianheng Song, Huijie Wang, Wenhao Wang, Dafeng Wei, Chengen Xie, Guo Xu, Junchi Yan, Cunbiao Yang, Lei Yang, Shukai Yang, Maoqing Yao, Jia Zeng, Chi Zhang, Qinglin Zhang, Bin Zhao, Chengyue Zhao, Jiaqi Zhao, Jianchao Zhu",
       "venue": "🏆IROS 2025, Best Paper Award Finalist, 2025",
-      "citations": 378,
+      "citations": 382,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:WbkHhVStYXYC",
       "field": "Robot Learning",
@@ -158,7 +168,7 @@
       "title": "Hume: Introducing system-2 thinking in visual-language-action model",
       "authors": "Haoming Song, Delin Qu, Yuanqi Yao, Qizhi Chen, Qi Lv, Yiwen Tang, Modi Shi, Guanghui Ren, Maoqing Yao, Bin Zhao, Dong Wang, Xuelong Li",
       "venue": "CVPR 2026, 2025",
-      "citations": 90,
+      "citations": 91,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:738O_yMBCRsC",
       "field": "VLA",
@@ -181,7 +191,7 @@
       "title": "Enerverse: Envisioning embodied future space for robotics manipulation",
       "authors": "Siyuan Huang, Liliang Chen, Pengfei Zhou, Shengcong Chen, Zhengkai Jiang, Yue Hu, Yue Liao, Peng Gao, Hongsheng Li, Maoqing Yao, Guanghui Ren",
       "venue": "NeurIPS 2025, 2025",
-      "citations": 81,
+      "citations": 82,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:a0OBvERweLwC",
       "field": "World Model",
@@ -196,7 +206,7 @@
       "title": "Embodiedonevision: Interleaved vision-text-action pretraining for general robot control",
       "authors": "Delin Qu, Haoming Song, Qizhi Chen, Zhaoqing Chen, Xianqiang Gao, Xinyi Ye, Qi Lv, Modi Shi, Guanghui Ren, Cheng Ruan, Maoqing Yao, Haoran Yang, Jiacheng Bao, Bin Zhao, Dong Wang",
       "venue": "arXiv e-prints, arXiv: 2508.21112, 2025",
-      "citations": 59,
+      "citations": 60,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:8AbLer7MMksC",
       "field": "VLA",
@@ -229,7 +239,7 @@
       "title": "Ewmbench: Evaluating scene, motion, and semantic quality in embodied world models",
       "authors": "H Yue, S Huang, Y Liao, S Chen, P Zhou, L Chen, M Yao, G Ren",
       "venue": "BMVC 2025, 2025",
-      "citations": 35,
+      "citations": 36,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:XiSMed-E-HIC",
       "field": "World Model",
@@ -256,6 +266,21 @@
         {
           "type": "code",
           "url": "https://github.com/OpenDriveLab/AgiBot-World"
+        }
+      ]
+    },
+    {
+      "title": "Act2Goal: From World Model To General Goal-conditioned Policy",
+      "authors": "P Zhou, L Chen, S Chen, D Chen, W Zhao, R Jin, G Ren, J Luo",
+      "venue": "Robotics: Science and Systems (RSS), 2026, 2025",
+      "citations": 13,
+      "year": 2025,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:BrmTIyaxlBUC",
+      "field": "World Model",
+      "links": [
+        {
+          "type": "page",
+          "url": "https://act2goal.github.io/"
         }
       ]
     },
@@ -301,21 +326,6 @@
         {
           "type": "page",
           "url": "https://sites.google.com/view/adc-robot"
-        }
-      ]
-    },
-    {
-      "title": "Act2Goal: From World Model To General Goal-conditioned Policy",
-      "authors": "P Zhou, L Chen, S Chen, D Chen, W Zhao, R Jin, G Ren, J Luo",
-      "venue": "Robotics: Science and Systems (RSS), 2026, 2025",
-      "citations": 11,
-      "year": 2025,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:BrmTIyaxlBUC",
-      "field": "World Model",
-      "links": [
-        {
-          "type": "page",
-          "url": "https://act2goal.github.io/"
         }
       ]
     },
