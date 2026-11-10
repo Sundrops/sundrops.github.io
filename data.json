@@ -1,10 +1,10 @@
 {
   "stats": {
-    "total_citations": 1994,
+    "total_citations": 2052,
     "h_index": 18,
-    "i10_index": 21
+    "i10_index": 22
   },
-  "updated_at": "2026-11-02T17:48:02.401929+00:00",
+  "updated_at": "2026-11-10T02:11:06.499069+00:00",
   "user_id": "oqN1dA8AAAAJ",
   "papers": [
     {
@@ -26,7 +26,7 @@
       "title": "Roboclaw: An agentic framework for scalable long-horizon robotic tasks",
       "authors": "Ruiying Li, Yunlang Zhou, YuYao Zhu, Kylin Chen, Jingyuan Wang, Sukai Wang, Kongtao Hu, Minhui Yu, Bowen Jiang, Zhan Su, Jiayao Ma, Xin He, Yongjian Shen, Yang Yang, Guanghui Ren, Maoqing Yao, Wenhao Wang, Yao Mu",
       "venue": "ECCV 2026, 2026",
-      "citations": 40,
+      "citations": 42,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:1qzjygNMrQYC",
       "field": "Robot Learning",
@@ -42,20 +42,10 @@
       ]
     },
     {
-      "title": "AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models",
-      "authors": "X Li, M Cai, J Xu, J Zhu, H Fan, Y Shen, G Ren, H Dong",
-      "venue": "CVPR 2026, 2026",
-      "citations": 22,
-      "year": 2026,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:olpn-zPbct0C",
-      "field": "VLA",
-      "links": []
-    },
-    {
       "title": "Ge-Sim 2.0: A roadmap towards comprehensive closed-loop video world simulators for robotic manipulation",
       "authors": "Boxiang Qiu, Liliang Chen, Yue Liao, Nan Wang, Lintao Wang, Jiayi Luo, Wenzhi Zhao, Shengcong Chen, Di Chen, Ye Li, Chen Gao, Shuicheng Yan, Si Liu, Maoqing Yao, Guanghui Ren",
       "venue": "arXiv preprint arXiv:2605.27491, 2026",
-      "citations": 19,
+      "citations": 23,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:HE397vMXCloC",
       "field": "World Model",
@@ -75,10 +65,20 @@
       ]
     },
     {
+      "title": "AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models",
+      "authors": "X Li, M Cai, J Xu, J Zhu, H Fan, Y Shen, G Ren, H Dong",
+      "venue": "CVPR 2026, 2026",
+      "citations": 23,
+      "year": 2026,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:olpn-zPbct0C",
+      "field": "VLA",
+      "links": []
+    },
+    {
       "title": "GE-Act 2.0: Pretraining and scaling a world-action model for robotic manipulation",
       "authors": "Renhang Liu, Wenzhi Zhao, Zhuo Yang, Liliang Chen, Pengfei Zhou, Shengcong Chen, Guanghui Ren, Youlun Peng, Rongjun Jin, Nan Wang, Sukai Wang, Xindong He, Jinyuan Feng, Ziyu Xiong, Linqing Zhong, Yifei Wei, Feng Han, Long Zhang, Da Huang, Nanshu Zhao, Chenghao Yin, Mo Wu, Zhaodong Yan, Kongtao Hu, Yuxiang Yan, Aogelijiang Niyazi, Yu Fang, Jia Zeng, Lizhu Meng, Daizhen Lv, Haoyu Cao, Zhiwen Hou, Lianjin Ye, Yuehan Niu, Zhikai Cai, Xuan Hu, Hui Min, Xiongfeng Cai, Yue Liao, Jing Wu, Soujanya Poria, Ye Li, Sanping Zhou, Maoqing Yao, AgiBot Research Team",
       "venue": "arXiv preprint arXiv:2609.05588, 2026",
-      "citations": 8,
+      "citations": 10,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:tkaPQYYpVKoC",
       "field": "Robot Learning",
@@ -88,7 +88,7 @@
       "title": "Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System",
       "authors": "Y Wei, L Zhong, Y Liu, Y Lu, X He, M Yao, G Ren",
       "venue": "ACL 2026, 2026",
-      "citations": 4,
+      "citations": 5,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:XiVPGOgt02cC",
       "field": "VLA",
@@ -103,7 +103,7 @@
       "title": "Agibot world 2026",
       "authors": "AW Team",
       "venue": "",
-      "citations": 2,
+      "citations": 4,
       "year": 2026,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:SdhP9T11ey4C",
       "field": "Robot Learning",
@@ -163,7 +163,7 @@
       "title": "UniVLA: Learning to Act Anywhere with Task-centric Latent Actions",
       "authors": "Q Bu, Y Yang, J Cai, S Gao, G Ren, M Yao, P Luo, H Li",
       "venue": "Robotics: Science and Systems (RSS), 2025, 2025",
-      "citations": 535,
+      "citations": 552,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:u9iWguZQMMsC",
       "field": "VLA",
@@ -182,7 +182,7 @@
       "title": "Agibot world colosseo: A large-scale manipulation platform for scalable and intelligent embodied systems",
       "authors": "Qingwen Bu*, Jisong Cai, Li Chen, Xiuqi Cui, Yan Ding, Siyuan Feng*, Shenyuan Gao, Xindong He*, Xu Huang, Shu Jiang, Yuxin Jiang, Cheng Jing, Hongyang Li, Jialu Li, Chiming Liu*, Yi Liu, Yuxiang Lu*, Jianlan Luo, Ping Luo, Yao Mu, Yuehan Niu, Yixuan Pan, Jiangmiao Pang, Yu Qiao, Guanghui Ren*, Cheng Ruan, Jiaqi Shan, Yongjian Shen, Chengshi Shi, Mingkang Shi, Modi Shi*, Chonghao Sima, Jianheng Song*, Huijie Wang, Wenhao Wang, Dafeng Wei, Chengen Xie*, Guo Xu, Junchi Yan, Cunbiao Yang, Lei Yang, Shukai Yang, Maoqing Yao, Jia Zeng, Chi Zhang, Qinglin Zhang, Bin Zhao, Chengyue Zhao, Jiaqi Zhao, Jianchao Zhu",
       "venue": "🏆IROS 2025, Best Paper Award Finalist, 2025",
-      "citations": 454,
+      "citations": 465,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:WbkHhVStYXYC",
       "field": "Robot Learning",
@@ -205,7 +205,7 @@
       "title": "Genie envisioner: A unified world foundation platform for robotic manipulation",
       "authors": "Yue Liao, Pengfei Zhou, Siyuan Huang, Donglin Yang, Shengcong Chen, Yuxin Jiang, Yue Hu, Jingbin Cai, Si Liu, Jianlan Luo, Liliang Chen, Shuicheng Yan, Maoqing Yao, Guanghui Ren",
       "venue": "ICLR 2026, 2025",
-      "citations": 183,
+      "citations": 190,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:tS2w5q8j5-wC",
       "field": "World Model",
@@ -228,7 +228,7 @@
       "title": "Hume: Introducing system-2 thinking in visual-language-action model",
       "authors": "Haoming Song, Delin Qu, Yuanqi Yao, Qizhi Chen, Qi Lv, Yiwen Tang, Modi Shi, Guanghui Ren, Maoqing Yao, Bin Zhao, Dong Wang, Xuelong Li",
       "venue": "CVPR 2026, 2025",
-      "citations": 96,
+      "citations": 98,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:738O_yMBCRsC",
       "field": "VLA",
@@ -251,7 +251,7 @@
       "title": "Enerverse: Envisioning embodied future space for robotics manipulation",
       "authors": "Siyuan Huang, Liliang Chen, Pengfei Zhou, Shengcong Chen, Zhengkai Jiang, Yue Hu, Yue Liao, Peng Gao, Hongsheng Li, Maoqing Yao, Guanghui Ren",
       "venue": "NeurIPS 2025, 2025",
-      "citations": 89,
+      "citations": 90,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:a0OBvERweLwC",
       "field": "World Model",
@@ -263,20 +263,33 @@
       ]
     },
     {
-      "title": "Embodiedonevision: Interleaved vision-text-action pretraining for general robot control, 2025",
-      "authors": "Delin Qu, Haoming Song, Qizhi Chen, Zhaoqing Chen, Xianqiang Gao, Xinyi Ye, Qi Lv, Modi Shi, Guanghui Ren, Cheng Ruan, Maoqing Yao, Haoran Yang, Jiacheng Bao, Bin Zhao, Dong Wang",
+      "title": "EO-1: An Open Unified Embodied Foundation Model for General Robot Control",
+      "authors": "D Qu, H Song, Q Chen, Z Chen, X Gao, X Ye, Q Lv, M Shi, G Ren, C Ruan, ...",
       "venue": "arXiv preprint arXiv:2508.21112, 2025",
-      "citations": 72,
+      "citations": 75,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:JoZmwDi-zQgC",
-      "field": "VLA",
-      "links": []
+      "field": "Robot Learning",
+      "links": [
+        {
+          "type": "page",
+          "url": "https://eo-robotics.ai/eo-1"
+        },
+        {
+          "type": "code",
+          "url": "https://github.com/EO-Robotics/EO1"
+        },
+        {
+          "type": "hf",
+          "url": "https://huggingface.co/IPEC-COMMUNITY/EO-1-3B"
+        }
+      ]
     },
     {
       "title": "Enerverse-ac: Envisioning embodied environments with action condition",
       "authors": "Yuxin Jiang, Shengcong Chen, Siyuan Huang, Liliang Chen, Pengfei Zhou, Yue Liao, Xindong He, Chiming Liu, Hongsheng Li, Maoqing Yao, Guanghui Ren",
       "venue": "NeurIPS 2025 WM Workshop Outstanding Paper, 2025",
-      "citations": 63,
+      "citations": 64,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:Tiz5es2fbqcC",
       "field": "World Model",
@@ -299,7 +312,7 @@
       "title": "Ewmbench: Evaluating scene, motion, and semantic quality in embodied world models",
       "authors": "H Yue, S Huang, Y Liao, S Chen, P Zhou, L Chen, M Yao, G Ren",
       "venue": "BMVC 2025, 2025",
-      "citations": 54,
+      "citations": 55,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:XiSMed-E-HIC",
       "field": "World Model",
@@ -318,7 +331,7 @@
       "title": "Is Diversity All You Need for Scalable Robotic Manipulation?",
       "authors": "M Shi, L Chen, J Chen, Y Lu, C Liu, G Ren, P Luo, D Huang, M Yao, H Li",
       "venue": "IEEE Transactions on Robotics (T-RO), 2025",
-      "citations": 39,
+      "citations": 41,
       "year": 2025,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:08ZZubdj9fEC",
       "field": "Robot Learning",
@@ -476,7 +489,7 @@
       "title": "Scene Graph Generation With Hierarchical Context",
       "authors": "G Ren, L Ren, Y Liao, S Liu, B Li, J Han, S Yan",
       "venue": "IEEE Transactions on Neural Networks and Learning Systems(TNNLS), 2020",
-      "citations": 48,
+      "citations": 49,
       "year": 2020,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oqN1dA8AAAAJ&pagesize=100&citation_for_view=oqN1dA8AAAAJ:iH-uZ7U-co4C",
       "field": "Vision",
